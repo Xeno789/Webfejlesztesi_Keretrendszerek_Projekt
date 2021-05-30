@@ -1,0 +1,45 @@
+<h1 class="display-4">Catalog Manager</h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="docID" #docID="ngModel" [(ngModel)]="service.formData.docID">
+    <div class="form group mb-2">
+        <input name="id" #id="ngModel" [(ngModel)]="service.formData.id" class="form-control" placeholder="ID" required>
+        <div *ngIf="id.invalid && id.touched" class="validation-error">A mező kitöltése kötelező.</div>
+    </div>
+    <div class="form group mb-2">
+        <input name="href" #href="ngModel" [(ngModel)]="service.formData.href" class="form-control" placeholder="href" required>
+        <div *ngIf="href.invalid && href.touched" class="validation-error">A mező kitöltése kötelező.</div>
+    </div>
+    <div class="form group mb-2">
+        <input name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control" placeholder="description" required>
+        <div *ngIf="description.invalid && description.touched" class="validation-error">A mező kitöltése kötelező.</div>
+    </div>
+    <div class="form group mb-2">
+        <input name="lastUpdate" #lastUpdate="ngModel" [(ngModel)]="service.formData.lastUpdate" class="form-control" placeholder="lastUpdate (yyyy-mm-dd)" required>
+        <div *ngIf="lastUpdate.invalid && lastUpdate.touched" class="validation-error">A mező kitöltése kötelező.</div>
+    </div>
+    <div class="form group mb-2">
+        <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" placeholder="name" required>
+        <div *ngIf="name.invalid && name.touched" class="validation-error">A mező kitöltése kötelező.</div>
+    </div>
+    <div class="form group mb-2">
+        <input name="version" #version="ngModel" [(ngModel)]="service.formData.version" class="form-control" placeholder="version" required>
+        <div *ngIf="version.invalid && version.touched" class="validation-error">A mező kitöltése kötelező.</div>
+    </div>
+    <div class="from-group row">
+        <div class="form group col-sm-6 mb-2">
+            <input name="validForStart" #validForStart="ngModel" [(ngModel)]="service.formData.validForStart" class="form-control" placeholder="validForStart" required>
+            <div *ngIf="validForStart.invalid && validForStart.touched" class="validation-error">A mező kitöltése kötelező.</div>
+        </div>
+        <div class="form group col-sm-6 mb-2">
+            <input name="validForEnd" #validForEnd="ngModel" [(ngModel)]="service.formData.validForEnd" class="form-control" placeholder="validForEnd" required>
+            <div *ngIf="validForEnd.invalid && validForEnd.touched" class="validation-error">A mező kitöltése kötelező.</div>
+        </div>
+    </div>
+    <div class="form group mb-2">
+        <input name="lifecycleStatus" #lifecycleStatus="ngModel" [(ngModel)]="service.formData.lifecycleStatus" class="form-control" placeholder="lifecycleStatus" required>
+        <div *ngIf="lifecycleStatus.invalid && lifecycleStatus.touched" class="validation-error">A mező kitöltése kötelező.</div>
+    </div>
+    <div class="form-group d-grid gap-2 mb-2">
+        <button type="submit" matTooltip="Adatok beküldése." [disabled]="form.invalid" class="btn btn-lg btn-primary">SUBMIT</button>
+    </div>
+</form>

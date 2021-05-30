@@ -1,0 +1,36 @@
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead style="text-align: center;">
+            <th>ID</th>
+            <th>Link</th>
+            <th>Description</th>
+            <th>Last Update</th>
+            <th>Name</th>
+            <th>Version</th>
+            <th>Valid for start</th>
+            <th>Valid for end</th>
+            <th>Lifecycle Status</th>
+            <th></th>
+        </thead>
+        <tbody style="text-align: center;vertical-align: middle;">
+            <tr *ngFor="let service of list">
+                <td (click)="onEdit(service)">{{service.id}}</td>
+                <td (click)="onEdit(service)">{{service.href}}</td>
+                <td (click)="onEdit(service)">{{service.description}}</td>
+                <td (click)="onEdit(service)">{{service.lastUpdate}}</td>
+                <td (click)="onEdit(service)">{{service.name}}</td>
+                <td (click)="onEdit(service)">{{service.version}}</td>
+                <td (click)="onEdit(service)">{{service.validForStart}}</td>
+                <td (click)="onEdit(service)">{{service.validForEnd}}</td>
+                <td (click)="onEdit(service)">{{service.lifecycleStatus}}</td>
+                <td><a class="btn text-danger" (click)="onDelete(service.docID)"><mat-icon>delete</mat-icon></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="buttonContainer">
+    <button mat-raised-button (click)="resetTable()" color="primary" matTooltip="Összes adat kiiratása.">Lekerdezés</button>
+    <button mat-raised-button (click)="osszetett1()" color="primary" matTooltip="Active adatok kiratása">Összetett lekerdezés 1</button>
+    <button mat-raised-button (click)="osszetett2()" color="primary" matTooltip="2015 után frissített adatok kiiratása">Összetett lekerdezés 2</button>
+</div>
